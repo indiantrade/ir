@@ -1,165 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> GUJRATI TRADER - Learning Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO TO HERO - Official Telegram Channel</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#10B981',
+                            neon: '#00FF87',
+                            darkBg: '#090D16',
+                            cardBg: '#111827',
+                            telegram: '#0088cc',
+                        }
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 25px rgba(0, 255, 135, 0.35)',
+                        'btn-glow': '0 10px 30px -5px rgba(16, 185, 129, 0.5)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }
+                }
+            }
+        }
+    </script>
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+    <style>
+        body {
+            background-color: #080C14;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(0, 136, 204, 0.08) 0%, transparent 40%);
+            color: #F3F4F6;
+        }
 
-  .card {
-    width: 85%;
-    max-width: 340px; 
-    background: #010a0f;
-    border: 1.5px solid #00d2ff;
-    border-radius: 35px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-  }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    object-fit: cover;
-    margin-top: -5px;
-    box-shadow: 0 0 15px #00d2ff;
-  }
+        .glass-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
 
-  h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 25px rgba(0, 255, 135, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 35px rgba(0, 255, 135, 0.7);
+            }
+        }
 
-  .features {
-    text-align: left;
-    margin: 0 auto;
-    width: 90%;
-  }
+        .animated-btn {
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
 
-  .feature-item {
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-  }
-
-  .feature-item:last-child { border-bottom: none; }
-
-  .icon { margin-right: 12px; font-size: 16px; }
-
-  .join-text {
-    color: #eee;
-    font-size: 12px;
-    margin: 20px 0 12px;
-    font-weight: 300;
-  }
-
-  .telegram-btn {
-    display: block;
-    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-  }
-
-  .hindi-quote {
-    color: #bbb;
-    font-size: 13px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .footer-box {
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 11px;
-    color: #888;
-  }
-
-  /* Link styling for Agency */
-  .footer-box a { 
-    color: #00d2ff; 
-    font-weight: bold; 
-    text-decoration: none;
-  }
-
-  .disclaimer {
-    font-size: 9px;
-    color: #444;
-    margin-top: 12px;
-  }
-</style>
+        .ticker-bar {
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans min-h-screen flex flex-col justify-between items-center px-4 py-4 antialiased selection:bg-emerald-500 selection:text-black">
 
-<div class="card">
-  <img src="https://i.ibb.co/GQYGXHF4/In-Shot-20260927-223648191.jpg" alt=" GUJRATI TRADER" class="profile-img">
+    <!-- Top Live Ticker Banner -->
+    <div class="w-full max-w-md mb-4 rounded-full glass-card py-2 px-4 flex items-center justify-between text-xs text-gray-300 border border-emerald-500/20">
+        <div class="flex items-center space-x-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="font-semibold text-emerald-400">NIFTY / BANK NIFTY</span>
+        </div>
+        <div class="text-gray-400 font-medium flex items-center gap-1">
+            <i class="fa-solid fa-chart-line text-emerald-400"></i> Daily Live Analysis
+        </div>
+    </div>
 
-  <h1> GUJRATI TRADER</h1>
+    <!-- Main Content Container -->
+    <main class="w-full max-w-md my-auto flex flex-col items-center">
+        
+        <!-- Profile & Logo Card -->
+        <div class="w-full glass-card rounded-3xl p-6 text-center shadow-glass relative overflow-hidden">
+            <!-- Glow Accent -->
+            <div class="absolute -top-12 -left-12 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl"></div>
 
-  <div class="features">
-    <div class="feature-item"><span class="icon"></span> Learning & Educational Sessions</div>
-    <div class="feature-item"><span class="icon"></span> Market Concepts & Awareness</div>
-    <div class="feature-item"><span class="icon"></span> Chart Reading Concepts</div>
-    <div class="feature-item"><span class="icon"></span> Educational Case Discussions</div>
-  </div>
+            <!-- Channel Logo -->
+            <div class="relative inline-block mb-4">
+                <img src="https://iili.io/nOJORiN.jpg" 
+                     onerror="this.src='https://placehold.co/120x120/10B981/ffffff?text=ZERO+TO+HERO'" 
+                     alt="ZERO TO HERO Logo" 
+                     class="w-28 h-28 rounded-full object-cover p-1 ring-4 ring-emerald-500/50 shadow-neon-glow mx-auto">
+                <span class="absolute bottom-1 right-1 bg-emerald-500 text-black text-xs p-1.5 rounded-full shadow-md flex items-center justify-center w-6 h-6 border-2 border-slate-900" title="Verified Community">
+                    <i class="fa-solid fa-check font-bold"></i>
+                </span>
+            </div>
 
-  <p class="join-text">Join our learning community and grow your knowledge</p>
+            <!-- Title & Badge -->
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+                ZERO TO HERO
+            </h1>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge text-emerald-400 text-xs font-semibold mb-4">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Official Educational Community
+            </div>
 
-  <a href="https://t.me/+mc6hSYTJFoU0MmRl" class="telegram-btn">JOIN TELEGRAM</a>
+            <!-- Tagline / Description -->
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                Master Options Trading, Nifty & Bank Nifty Price Action Chart Patterns. Learn risk management to transform your trading journey from <span class="text-emerald-400 font-bold">Zero to Hero</span>!
+            </p>
 
-  <p class="hindi-quote">     ,     </p>
+            <!-- Feature Highlights Cards -->
+            <div class="grid grid-cols-2 gap-2.5 mb-6 text-left">
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start space-x-2.5">
+                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">
+                        <i class="fa-solid fa-chart-pie text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-bold text-white">Live Analysis</h2>
+                        <p class="text-[11px] text-gray-400">Nifty & BankNifty</p>
+                    </div>
+                </div>
 
-  <div class="footer-box">
-    This Channel Advertise By <a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">AD BUILD AGENCY</a>
-  </div>
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start space-x-2.5">
+                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">
+                        <i class="fa-solid fa-graduation-cap text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-bold text-white">Price Action</h2>
+                        <p class="text-[11px] text-gray-400">Learn Strategies</p>
+                    </div>
+                </div>
 
-  <div class="disclaimer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook™ or endorsed by Facebook™.
-  </div>
-</div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2552096918611818');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2552096918611818&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start space-x-2.5">
+                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">
+                        <i class="fa-solid fa-bullseye text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-bold text-white">Chart Setups</h2>
+                        <p class="text-[11px] text-gray-400">Daily Updates</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800 flex items-start space-x-2.5">
+                    <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">
+                        <i class="fa-solid fa-shield-cat text-sm"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-bold text-white">Risk Rules</h2>
+                        <p class="text-[11px] text-gray-400">Capital Protection</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary Telegram Button -->
+            <a href="https://t.me/+yD_galMm3ZU0MzM0" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="animated-btn w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg transition-all duration-300 transform active:scale-95 shadow-btn-glow group">
+                <i class="fa-brands fa-telegram text-2xl group-hover:scale-110 transition-transform"></i>
+                <span>JOIN TELEGRAM CHANNEL</span>
+            </a>
+
+            <!-- Sub Trust Indicator -->
+            <div class="flex items-center justify-center space-x-4 mt-4 text-[12px] text-gray-400 font-medium">
+                <span class="flex items-center gap-1">
+                    <i class="fa-solid fa-lock text-emerald-400"></i> Free Access
+                </span>
+                <span>â€¢</span>
+                <span class="flex items-center gap-1">
+                    <i class="fa-solid fa-bolt text-yellow-400"></i> Instant Updates
+                </span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Meta Ads Policy Compliant Footer -->
+    <footer class="w-full max-w-xl mt-8 pt-6 border-t border-slate-800/80 text-center text-gray-400 text-[11px] leading-relaxed">
+        
+        <!-- SEBI Compliance Disclaimer -->
+        <p class="mb-3">
+            <strong class="text-gray-300">Disclaimer:</strong> This Telegram channel is solely created for educational and informational learning purposes regarding stock market technical analysis. We are <strong>NOT SEBI Registered</strong> advisors. Trading and investing in stocks, options, and futures carry significant financial risk. Please consult a qualified financial advisor before making any investment or trading decisions.
+        </p>
+
+        <!-- Meta / Facebook Non-Affiliation Statement -->
+        <p class="mb-3 text-gray-400">
+            This site is not a part of the Facebook website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta in any way. FACEBOOK is a trademark of Meta Platforms, Inc.
+        </p>
+
+        <!-- Agency Credit Button / Link -->
+        <div class="my-4">
+            <a href="https://t.me/+3XoqJNLxYHswNTc1" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors duration-200 text-[12px]">
+                <i class="fa-solid fa-rectangle-ad text-xs"></i>
+                Ads By AD BUILD AGENCY
+            </a>
+        </div>
+
+        <!-- Links Section -->
+        <div class="flex justify-center items-center space-x-3 text-gray-400 mb-3 text-[11px]">
+            <a href="#modal-privacy" onclick="openModal('Privacy Policy', 'This page provides educational market updates. We respect your privacy and do not collect personal identifying data or financial information on this website.')" class="hover:underline hover:text-emerald-400">Privacy Policy</a>
+            <span>|</span>
+            <a href="#modal-terms" onclick="openModal('Terms of Service', 'By accessing this page, you agree that all content provided in the linked channel is for educational purposes only and does not constitute financial advice.')" class="hover:underline hover:text-emerald-400">Terms of Service</a>
+            <span>|</span>
+            <a href="#modal-disclaimer" onclick="openModal('Disclaimer', 'Past performance mentioned in education examples is not indicative of future results. Always trade with strict risk management.')" class="hover:underline hover:text-emerald-400">Disclaimer</a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-gray-400 font-mono text-[10px]">
+            &copy; 2026 ZERO TO HERO. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 text-left relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="modalTitle" class="text-lg font-bold text-emerald-400 mb-3"></h3>
+            <p id="modalBody" class="text-xs text-gray-300 leading-relaxed"></p>
+            <button onclick="closeModal()" class="mt-5 w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2 rounded-xl text-xs">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Simple JS for Modals -->
+    <script>
+        function openModal(title, text) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = text;
+            document.getElementById('policyModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('policyModal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
